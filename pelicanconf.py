@@ -8,6 +8,8 @@ import json
 AUTHOR = 'Marcel Marques'
 SITENAME = 'Pythonic.cafe'
 SITEURL = ''
+STATIC_PATHS = ['extra/CNAME']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
 PATH = 'content'
 THEME = 'theme'
