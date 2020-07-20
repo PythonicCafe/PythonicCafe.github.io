@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }}{% endblock %}
+
+{% block content %}
+<section class="bg-gray-200 text-gray-700 body-font ">
+    <div class="grid grid-cols-2 max-w-screen-xl mx-auto items-center">
+        <div class="col-span-2 md:col-span-1 mt-10 md:py-24 md:hidden">
+            <div class="flex justify-center">
+                <img class="max-w-xs p-5" alt="Pythonic Café Logo" type="image/png"
+                    src="{{ SITEURL }}/theme/img/logo.png">
+            </div>
+        </div>
+        <div class="col-span-2 md:col-span-1 px-5 py-24 md:py-48 md:text-left lg:mb-0 items-center text-centerj">
+            <h1 class="sm:text-4xl text-3xl mb-4 font-medium text-gray-900 md:text-left">Tudo sobre o mundo Python!
+                <!-- <br class="hidden lg:inline-block">Python é bom pacas! -->
+            </h1>
+            <p class="mb-8 leading-relaxed text-gray-800 text-left">Lorem ipsum dolor sit amet consectetur adipisicing
+                elit.
+                Deserunt quidem
+                impedit quisquam accusamus illo necessitatibus deleniti? Commodi perferendis ea eos veritatis id,
+                impedit
+                repudiandae vel accusamus. Nemo id at voluptatum.</p>
+            <div>
+                <a href="#section1" class="btn btn-primary">Conhecer</a>
+            </div>
+        </div>
+        <div class="col-span-2 md:col-span-1 md:py-24 hidden md:block">
+            <div class="flex justify-center">
+                <img class="max-w-sm p-5" alt="Pythonic Café Logo" src="{{ SITEURL }}/theme/img/logo.png">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'includes/inc_projects.html' %}
+
+{% include 'includes/inc_videos.html' %}
+
+{% include 'includes/inc_courses.html' %}
+
+<section class="text-gray-700 body-font border-t border-gray-200 bg-gray-700">
+    <div class="container px-5 py-24 mx-auto flex flex-col items-center">
+        <h1 class="font-bold text-2xl text-white">Contato</h1>
+        <a href="mailto:contato@pythonic.cafe" class="btn bg-white text-gray-700 mt-3 rounded-full hover:bg-gray-500
+         hover:text-gray-100 hover:scale-125 transform transition duration-500">contato@pythonic.cafe</a>
+    </div>
+</section>
+{% endblock %}

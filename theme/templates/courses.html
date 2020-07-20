@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block menu %}
+    <li>
+        <a class="md:p-2 lg:px-4 btn-menu" href="{{ SITEURL }}" title="Home">Home</a>
+    </li>
+    <li>
+        <a class="md:p-2 lg:px-4 btn-menu" href="{{ SITEURL }}/pages/videos.html" title="Vídeos">Vídeos</a>
+    </li>
+    <li>
+        <a class="md:p-2 lg:px-4 btn-menu" href="{{ SITEURL }}/pages/projects.html" title="Projetos">Projetos</a>
+    </li>
+    <li>
+        <a class="md:p-2 lg:px-4 btn-menu text-white" href="{{ SITEURL }}/pages/courses.html" title="Cursos">Cursos</a>
+    </li>
+    <li>
+        <a class="md:p-2 lg:px-4 btn-menu" href="{{ SITEURL }}/pages/communities.html" title="Comunidades">Comunidades</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+{% include 'includes/inc_courses.html' %}
+{% endblock %}
