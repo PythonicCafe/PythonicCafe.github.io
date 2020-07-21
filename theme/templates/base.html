@@ -35,30 +35,20 @@
                     </button>
                 </div>
                 <div id="menu"
-                    class="w-full h-0 transition-all ease-out duration-300 md:transition-none md:w-auto md:flex-grow md:flex md:items-center">
-                    <ul id="ulMenu" class="flex flex-col transition-opacity delay-100 duration-300 ease-out sm:transition-none opacity-0
-               md:opacity-100 mt-5 mx-4 md:flex-row md:items-center md:mx-0 md:ml-auto md:mt-0 md:pt-0 md:border-0">
-                        {% block menu %}
-                            <li>
-                                <a class="md:p-2 lg:px-4 btn-menu text-white" href="{{ SITEURL }}" title="Home">Home</a>
-                            </li>
-                            <li>
-                                <a class="md:p-2 lg:px-4 btn-menu" href="{{ SITEURL }}/pages/videos.html"
-                                    title="Vídeos">Vídeos</a>
-                            </li>
-                            <li>
-                                <a class="md:p-2 lg:px-4 btn-menu" href="{{ SITEURL }}/pages/projects.html"
-                                    title="Projetos">Projetos</a>
-                            </li>
-                            <li>
-                                <a class="md:p-2 lg:px-4 btn-menu" href="{{ SITEURL }}/pages/courses.html"
-                                    title="Cursos">Cursos</a>
-                            </li>
-                            <li>
-                                <a class="md:p-2 lg:px-4 btn-menu" href="{{ SITEURL }}/pages/communities.html"
-                                    title="Comunidades">Comunidades</a>
-                            </li>
-                        {% endblock %}
+                    class="w-full h-0 transition-all ease-out duration-500 md:transition-none md:w-auto md:flex-grow md:flex md:items-center">
+                    <ul id="ulMenu"
+                        class="flex flex-col duration-300 ease-out sm:transition-none mt-5 mx-4 md:flex-row md:items-center md:mx-0 md:ml-auto md:mt-0 md:pt-0 md:border-0">
+                        {% for link in NAVBAR_LINKS %}
+                        <li>
+                            {% if output_file == link.href %}
+                            <a class="md:p-2 lg:px-4 btn-menu duration-500 text-white" href="{{ link.href }}"
+                                title="Home">{{ link.title }}</a>
+                            {% else %}
+                            <a class="md:p-2 lg:px-4 btn-menu duration-500" href="{{ link.href }}"
+                                title="Home">{{ link.title }}</a>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -79,6 +69,15 @@
                         <li>
                             <a class="text-gray-700 hover:text-gray-800">First Link</a>
                         </li>
+                        <li>
+                            <a class="text-gray-700 hover:text-gray-800">Second Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-700 hover:text-gray-800">Third Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-700 hover:text-gray-800">Fourth Link</a>
+                        </li>
                     </nav>
                 </div>
             </div>
@@ -86,7 +85,7 @@
         <div>
             <div class="container px-5 py-4 flex flex-wrap mx-auto items-center">
                 <span class="inline-flex mx-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
-                    <a class="text-gray-600">
+                    <!-- <a class="text-gray-600">
                         <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             class="w-5 h-5" viewBox="0 0 24 24">
                             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
@@ -115,8 +114,17 @@
                             </path>
                             <circle cx="4" cy="4" r="2" stroke="none"></circle>
                         </svg>
+                    </a> -->
+                    <a href="https://github.com/PythonicCafe/PythonicCafe.github.io"
+                        class="ml-3 text-gray-600 hover:scale-125 transform transition duration-500 hover:text-gray-900">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
                     </a>
-                    <a class="ml-3 text-gray-600">
+                    <a href="https://www.youtube.com/channel/UC9rtYzWLlYRfbYjDUDsVmUg"
+                        class="ml-3 text-gray-600 hover:scale-125 transform transition duration-500 hover:text-gray-900">
                         <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
                             <path troke="none"

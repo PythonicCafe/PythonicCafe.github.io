@@ -1,6 +1,6 @@
 Title: Projetos
-Slug: projects
-Template: projects
+Slug: projetos
+Template: projetos
 
 
 # Projetos

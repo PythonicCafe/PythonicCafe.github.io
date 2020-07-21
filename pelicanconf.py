@@ -9,7 +9,8 @@ AUTHOR = 'Marcel Marques'
 SITENAME = 'Pythonic.cafe'
 SITEURL = ''
 STATIC_PATHS = ['extra/CNAME']
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}, }
+PAGE_SAVE_AS = '{slug}.html'
 
 PATH = 'content'
 THEME = 'theme'
@@ -19,6 +20,25 @@ TIMEZONE = "America/Sao_Paulo"
 DEFAULT_LANG = "pt-br"
 
 LOCALE = "pt_BR.UTF-8"
+
+NAVBAR_LINKS = [
+    {
+        'title': 'Home',
+        'href': 'index.html',
+    },
+    {
+        'title': 'Videos',
+        'href': 'videos.html',
+    },
+    {
+        'title': 'Cursos',
+        'href': 'cursos.html',
+    },
+    {
+        'title': 'Comunidades',
+        'href': 'comunidades.html',
+    }
+]
 
 # Feed generation is usually not desired when developing
 # FEED_ALL_ATOM = None

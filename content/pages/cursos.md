@@ -1,6 +1,6 @@
 Title: Cursos
-Slug: courses
-Template: courses
+Slug: cursos
+Template: cursos
 
 
 # Cursos

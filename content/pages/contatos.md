@@ -1,6 +1,6 @@
 Title: Contatos
-Slug: contacts
-Template: contacts
+Slug: contatos
+Template: contatos
 
 
 # Contatos

@@ -1,6 +1,6 @@
 Title: Comunidades
-Slug: communities
-Template: communities
+Slug: comunidades
+Template: comunidades
 
 
 # Comunidades
