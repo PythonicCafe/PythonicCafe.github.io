@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 import glob
 import json
+import datetime
 
 AUTHOR = 'Marcel Marques'
 SITENAME = 'Pythonic.cafe'
@@ -68,10 +69,13 @@ TYPOGRIFY = True
 RELATIVE_URLS = True
 
 # Configurações da página de comunidades locais
-VIDEOS = [
-    json.load(open(fname, 'r', encoding='utf-8'))
-    for fname in glob.glob('content/videos/*.json')
-]
+
+def sortByDate(path):
+    obj_list = [json.load(open(fname, 'r', encoding='utf-8')) for fname in glob.glob(path)]
+    obj_list.sort(key=lambda x: x["date"], reverse=True)
+    return obj_list
+
+VIDEOS = sortByDate('content/videos/*.json')
 
 # Texts
 VIDEOS_DESCRIPTION = (
