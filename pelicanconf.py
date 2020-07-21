@@ -27,6 +27,10 @@ NAVBAR_LINKS = [
         'href': 'index.html',
     },
     {
+        'title': 'Projetos',
+        'href': 'projetos.html',
+    },
+    {
         'title': 'Videos',
         'href': 'videos.html',
     },
