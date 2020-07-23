@@ -25,23 +25,23 @@ LOCALE = "pt_BR.UTF-8"
 NAVBAR_LINKS = [
     {
         'title': 'Home',
-        'href': 'index.html',
+        'href': 'index',
     },
     {
         'title': 'Projetos',
-        'href': 'projetos.html',
+        'href': 'projetos',
     },
     {
         'title': 'Videos',
-        'href': 'videos.html',
+        'href': 'videos',
     },
     {
         'title': 'Cursos',
-        'href': 'cursos.html',
+        'href': 'cursos',
     },
     {
         'title': 'Comunidades',
-        'href': 'comunidades.html',
+        'href': 'comunidades',
     }
 ]
 
@@ -66,18 +66,29 @@ DEFAULT_PAGINATION = 10
 TYPOGRIFY = True
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+#RELATIVE_URLS = True
 
-# Configurações da página de comunidades locais
+def getContentElements(path):
+    object_list = [json.load(open(fname, 'r', encoding='utf-8'))
+                   for fname in glob.glob(path)]
+    return object_list
 
-def sortByDate(path):
-    obj_list = [json.load(open(fname, 'r', encoding='utf-8')) for fname in glob.glob(path)]
-    obj_list.sort(key=lambda x: x["date"], reverse=True)
-    return obj_list
+def getSortedByDate(path):
+    object_list = getContentElements(path)
+    object_list.sort(key=lambda x: x["date"], reverse=True)
+    return object_list
 
-VIDEOS = sortByDate('content/videos/*.json')
 
-# Texts
+HOME_TITLE = 'Tudo sobre o mundo Python!'
+HOME_CAPTION = (
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+    ' Ut vel repudiandae voluptates tempore iusto architecto enim'
+    ' similique quasi aut, debitis sed repellendus, commodi natus'
+    ' animi ipsam minus temporibus libero laborum.'
+)
+
+VIDEOS = getSortedByDate('content/videos/*.json')
+VIDEOS_TITLE = 'Videos'
 VIDEOS_DESCRIPTION = (
     'Esses são alguns dos vídeos produzidos em nosso projeto.'
     ' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
@@ -85,6 +96,14 @@ VIDEOS_DESCRIPTION = (
     ' similique quasi aut, debitis sed repellendus, commodi natus'
     ' animi ipsam minus temporibus libero laborum.'
 )
+
+PROJECTS = getContentElements('content/projects/*.json')
+PROJECTS_CAPTION = 'CONHEÇA NOSSOS TRABALHOS'
+PROJECTS_TITLE = 'Projetos desenvolvidos'
+
+COURSES = getContentElements('content/courses/*.json')
+COURSESE_CAPTION = 'CONHECIMENTO E APRENDIZADO'
+COURSESE_TITLE = 'Cursos'
 COURSES_TEXT = (
     'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
     ' Ut vel repudiandae voluptates tempore iusto architecto enim'
