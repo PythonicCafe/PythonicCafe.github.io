@@ -2,5 +2,7 @@
     "date": "2016-10-07",
     "url": "https://www.youtube.com/embed/Q3Kgd1IirgM",
     "name": "PythonBrasil: Palestra Relâmpago & Espaço Aberto",
-    "description": "Vídeo explicando sobre as palestras relâmpago (lightning talks) e espaços abertos (open spaces) da Conferência Python Brasil."
+    "description": "Vídeo explicando sobre as palestras relâmpago (lightning talks) e espaços abertos (open spaces) da Conferência Python Brasil.",
+    "vdownloadurl":"https://www.youtube.com/embed/Q3Kgd1IirgM",
+    "ldownloadurl": "https://www.youtube.com/embed/Q3Kgd1IirgM"
 }

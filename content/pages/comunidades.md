@@ -2,7 +2,7 @@ Title: Comunidades
 Slug: comunidades
 Template: comunidades
 
+Página em construção
+============
 
-# Comunidades
-
-Lorem ipsum
+Navegue pelo menu de volta para mais conteúdo :)

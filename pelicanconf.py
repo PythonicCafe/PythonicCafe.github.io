@@ -22,6 +22,7 @@ DEFAULT_LANG = "pt-br"
 
 LOCALE = "pt_BR.UTF-8"
 
+# Links navbar and footer 
 NAVBAR_LINKS = [
     {
         'title': 'Home',
@@ -42,6 +43,10 @@ NAVBAR_LINKS = [
     {
         'title': 'Comunidades',
         'href': 'comunidades',
+    },
+    {
+        'title': 'Contato',
+        'href': 'contato',
     }
 ]
 
@@ -53,10 +58,10 @@ NAVBAR_LINKS = [
 # AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+# LINKS = (('Pelican', 'http://getpelican.com/'),
+#          ('Python.org', 'http://python.org/'),
+#          ('Jinja2', 'http://jinja.pocoo.org/'),
+#          ('You can modify those links in your config file', '#'),)
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
@@ -68,6 +73,7 @@ TYPOGRIFY = True
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
+# Methods
 def getContentElements(path):
     object_list = [json.load(open(fname, 'r', encoding='utf-8'))
                    for fname in glob.glob(path)]
@@ -78,7 +84,7 @@ def getSortedByDate(path):
     object_list.sort(key=lambda x: x["date"], reverse=True)
     return object_list
 
-
+# Titles and texts showed in home and pages
 HOME_TITLE = 'Tudo sobre o mundo Python!'
 HOME_CAPTION = (
     'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'

@@ -6,8 +6,10 @@
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">{{COURSESE_TITLE}}</h1>
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base">{{COURSES_TEXT}}</p>
         </div>
+        {% if output_file == 'cursos.html' or output_file == 'cursos' %}
         <div class="flex flex-wrap">
             {% for course in COURSES %}
+            <!-- Show all courses in /cursos -->
             <div class="xl:w-1/3 lg:w-1/2 md:w-full px-8 py-6 border-b-2 lg:border-l-2 lg:border-b-0 border-gray-200">
                 <a href="{{course.url}}">
                     <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">{{course.name}}</h2>
@@ -24,6 +26,38 @@
             </div>
             {% endfor %}
         </div>
-        <!-- <button class="flex mx-auto mt-16 btn btn-primary">Ver mais</button> -->
+        {% else %}
+        <!-- Show only 3 courses in home -->
+        <div class="flex flex-wrap">
+            {% for course in COURSES[0:3] %}
+            <div class="xl:w-1/3 m-auto max-w-lg px-8 py-6 border-b-2 lg:border-l-2 lg:border-b-0 border-gray-200">
+                <a href="{{course.url}}">
+                    <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">{{course.name}}</h2>
+                </a>
+                <p class="leading-relaxed text-base mb-4">{{course.description}}</p>
+                <a href="{{course.url}}"
+                    class="text-blue-600 inline-flex items-center hover:scale-110 hover:font-medium transform transition-transform duration-300">Ir
+                    para
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="mt-16">
+            <a href="{{ SITEURL }}/cursos"
+                class="mt-3 text-blue-600 inline-flex text-lg items-center hover:scale-110 hover:font-lg transform transition-transform duration-300">
+                Ver todos os cursos
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-6 h-6 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+        {% endif %}
+    </div>
+    <!-- <button class="flex mx-auto mt-16 btn btn-primary">Ver mais</button> -->
     </div>
 </section>
