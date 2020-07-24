@@ -17,25 +17,29 @@
                     <iframe class="h-48 rounded w-full mb-6" width="560" height="315" src="{{ video.url }}"
                         frameborder="0" allowfullscreen></iframe>
                     <h3 class="tracking-widest text-blue-600 text-xs font-medium title-font">{{ video.date }}</h3>
-                    <a href="{{ video.url }}">
-                        <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{{ video.name }}</h2>
+                    <a href="{{ video.url}}">
+                        <div class="h-16">
+                            <h2
+                                class="text-lg text-gray-900 font-medium title-font overflow-hidden mb-4 min-h-full max-h-full">
+                                {{ video.name }}</h2>
+                        </div>
                     </a>
-                    <p class="leading-relaxed text-base mb-4">{{ video.description }}</p>
+                    <div class="h-32">
+                        <p class="leading-relaxed text-base mb-4 max-h-full min-h-full overflow-y-auto">{{ video.description }}</p>
+                    </div>
                     <h3 class="font-medium pt-2 pb-1 text-md">Download</h3>
                     <div class="flex">
                         {% if video.vdownloadurl %}
                         <a href="{{video.vdownloadurl}}"
                             class="py-1 text-blue-600 font-medium text-sm hover:scale-110 hover:font-lg transform transition-transform duration-300">Vídeo</a>
                         {% else %}
-                        <span 
-                            class="py-1 text-gray-400 font-medium text-sm">Vídeo</span>
+                        <span class="py-1 text-gray-400 font-medium text-sm">Vídeo</span>
                         {% endif %}
                         {% if video.ldownloadurl %}
                         <a href="{{video.ldownloadurl}}"
                             class="py-1 pl-2 text-blue-600 font-medium text-sm hover:scale-110 hover:font-lg transform transition-transform duration-300">Legenda</a>
                         {% else %}
-                        <span 
-                            class="py-1 pl-2 text-gray-400 font-medium text-sm">Legenda</span>
+                        <span class="py-1 pl-2 text-gray-400 font-medium text-sm">Legenda</span>
                         {% endif %}
                     </div>
                 </div>
@@ -51,25 +55,29 @@
                     <iframe class="h-48 rounded w-full mb-6" width="560" height="315" src="{{ video.url }}"
                         frameborder="0" allowfullscreen></iframe>
                     <h3 class="tracking-widest text-blue-600 text-xs font-medium title-font">{{ video.date }}</h3>
-                    <a href="{{ video.url }}">
-                        <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{{ video.name }}</h2>
+                    <a href="{{ video.url}}">
+                        <div class="h-16">
+                            <h2
+                                class="text-lg text-gray-900 font-medium title-font overflow-hidden mb-4 min-h-full max-h-full">
+                                {{ video.name }}</h2>
+                        </div>
                     </a>
-                    <p class="leading-relaxed text-base mb-4">{{ video.description }}</p>
+                    <div class="h-32">
+                        <p class="leading-relaxed text-base mb-4 max-h-full min-h-full overflow-y-auto">{{ video.description }}</p>
+                    </div>
                     <h3 class="font-medium pt-2 pb-1 text-md">Download</h3>
                     <div class="flex">
                         {% if video.vdownloadurl %}
                         <a href="{{video.vdownloadurl}}"
                             class="py-1 text-blue-600 font-medium text-sm hover:scale-110 hover:font-lg transform transition-transform duration-300">Vídeo</a>
                         {% else %}
-                        <span 
-                            class="py-1 text-gray-400 font-medium text-sm">Vídeo</span>
+                        <span class="py-1 text-gray-400 font-medium text-sm">Vídeo</span>
                         {% endif %}
                         {% if video.ldownloadurl %}
                         <a href="{{video.ldownloadurl}}"
                             class="py-1 pl-2 text-blue-600 font-medium text-sm hover:scale-110 hover:font-lg transform transition-transform duration-300">Legenda</a>
                         {% else %}
-                        <span 
-                            class="py-1 pl-2 text-gray-400 font-medium text-sm">Legenda</span>
+                        <span class="py-1 pl-2 text-gray-400 font-medium text-sm">Legenda</span>
                         {% endif %}
                     </div>
                 </div>
